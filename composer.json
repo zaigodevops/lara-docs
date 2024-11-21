@@ -1,5 +1,5 @@
   {
-    "name": "lara-docs",
+    "name": "zaigo/lara-docs",
     "description": "Document Management",
     "keywords":["document", "documentmanagement", "management", "document package", "laravel package"],
     "license": "MIT",
