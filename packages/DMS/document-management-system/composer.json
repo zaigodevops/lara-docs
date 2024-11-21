@@ -1,0 +1,24 @@
+  {
+    "name": "documentmanagement/documentmanagement-package",
+    "description": "Document Management",
+    "keywords":["document", "documentmanagement", "management", "document package", "laravel package"],
+    "license": "MIT",
+    "support": {
+    },
+    "minimum-stability": "dev",
+	"autoload": {
+        "psr-4": {
+            "DMS\\DocumentManagementSystem\\": "src/"
+        },
+        "files": [
+        ]
+    },
+    "require": {},
+    "extra": {
+    "laravel": {
+      "providers": [
+        "DMS\\DocumentManagementSystem\\DocumentManagementServiceProvider"
+      ]
+    }
+  }
+}
