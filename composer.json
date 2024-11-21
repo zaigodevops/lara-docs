@@ -1,5 +1,5 @@
   {
-    "name": "documentmanagement/documentmanagement-package",
+    "name": "lara-docs",
     "description": "Document Management",
     "keywords":["document", "documentmanagement", "management", "document package", "laravel package"],
     "license": "MIT",

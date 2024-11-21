@@ -16,7 +16,6 @@ Route::group(['middleware' => ['web', 'auth', 'check-userstatus'], 'roles' => ''
                 Route::post('create', 'App\Http\Controllers\Admin\UserController@store')->name('users.store');
                 Route::get('{user}/edit', 'App\Http\Controllers\Admin\UserController@edit')->name('users.edit');
                 // Route::put('{user}', 'App\Http\Controllers\Admin\UserController@update')->name('users.update');
-                Route::put('{user}',[App\Http\Controllers\Admin\UserController::class ,'update'])->name('users.update');
                 Route::get('{user}', 'App\Http\Controllers\Admin\UserController@show')->name('users.show');
                 Route::delete('{user}', 'App\Http\Controllers\Admin\UserController@destroy')->name('users.destroy');
                 Route::delete('/', 'App\Http\Controllers\Admin\UserController@bulkdestroy')->name('user.bulkdestroy');
