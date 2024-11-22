@@ -8,11 +8,11 @@ use DMS\DocumentManagementSystem\Http\Controllers\AdminController;
 
 /**** ADMIN PROFILE ROUTES ****/
 Route::group(['middleware' => 'auth'], function () {
-Route::get('admin/', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
+// Route::get('admin/', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
 });
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/dashboard', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
+    // Route::get('/dashboard', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
     Route::get('profile/edit', [AdminController::class, 'edit'])->name('admin.profile.edit');
     Route::put('{user}/update', [AdminController::class, 'profile_update'])->name('admin.profile.update');
     
