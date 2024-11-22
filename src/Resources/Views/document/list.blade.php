@@ -130,7 +130,7 @@
                                         <button class="border-none" type="button"
                                              onclick="viewDocument('{{ route('view.document', ['id' => $data->id, 'category_id' => $data->category_id]) }}', '{{ basename($data->files) }}')"
                                             data-toggle="tooltip" data-placement="top" title="View File">
-                                            <img src="{{ asset('vendor/larasnap-auth/images/view.png') }}" alt="IMG">
+                                            <img src="{{  asset('vendor/laradocs/images/view.png') }}" alt="IMG">
                                         </button>
 
                                         <form action="{{ route('download.document') }}" method="GET" class="d-inline">
@@ -138,13 +138,13 @@
                                             <input type="hidden" name="document_id" value="{{ $data->id }}">
                                             <button class="border-none" type="submit" id="download-document"
                                                 data-toggle="tooltip" data-placement="top" title="Download File">
-                                                <img src="{{ asset('vendor/larasnap-auth/images/download.png') }}" alt="IMG">
+                                                <img src="{{  asset('vendor/laradocs/images/download.png') }}" alt="IMG">
                                             </button>
                                         </form>
                                         <button class="border-none delete-button" type="button"
                                             data-document-id="{{ $data->id }}" data-category-id="{{ $data->category_id }}"
                                             data-toggle="tooltip" data-placement="top" title="Delete File">
-                                            <img src="{{ asset('vendor/larasnap-auth/images/delete.png') }}" alt="IMG">
+                                            <img src="{{  asset('vendor/laradocs/images/elete.png') }}" alt="IMG">
                                         </button>
 
                                     </td>
@@ -153,7 +153,7 @@
                             @empty
                                 <tr>
                                     <td colspan="7" class="nodata">
-                                        <p><img src="{{ asset('vendor/larasnap-auth/images/upload.png') }}" alt="IMG"></p>
+                                        <p><img src="{{  asset('vendor/laradocs/images/pload.png') }}" alt="IMG"></p>
                                         No data available
                                     </td>
                                 </tr>

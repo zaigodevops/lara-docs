@@ -191,7 +191,7 @@
                             class="text-danger required">*</small></label>
                     <form action="{{ route('document.index') }}" method="POST" id="document-dropzone">
                         @csrf
-                        <p><img src="{{ asset('vendor/larasnap-auth/images/upload.png') }}" alt="IMG"></p>
+                        <p><img src="{{  asset('vendor/laradocs/images/upload.png') }}" alt="IMG"></p>
                         <div class="py-3">Drag & Drop Doc/Docx or PDF files here to upload</div>
                         <div class="text-primary display-4" style="cursor: pointer;">Click or Browse
                         </div>
@@ -222,7 +222,7 @@
                         <div class="modal-body">
                             <div class="text-center">
                                 <p><img style="width: 115px;"
-                                        src="{{ asset('vendor/larasnap-auth/images/success-icon.png') }}" alt="IMG"></p>
+                                        src="{{  asset('vendor/laradocs/images/success-icon.png') }}" alt="IMG"></p>
                                 <h1>Document Uploaded</h1>
                                 <p>Your files have been saved. You can now proceed or view the uploaded documents.</p>
                             </div>
@@ -265,7 +265,7 @@
                     // Create a preview container with a data attribute instead of an ID
                     var filePreview = $(
                         '<div class="file-preview" data-file-name="' + file.name + '">' +
-                        '<img src="' + (file.type.includes("pdf") ? "{{ asset('pdflogo.png') }}" : "{{ asset('wordlogo.png') }}") + '" alt="File Logo" />' +
+                        '<img src="' + (file.type.includes("pdf") ? "{{ asset('vendor/laradocs/images/pdflogo.png') }}" : "{{ asset('vendor/laradocs/images/wordlogo.png') }}") + '" alt="File Logo" />' +
                         '<span>' + file.name + '</span>' +
                         '<span class="remove-file" data-file-name="' + file.name + '">&times;</span>' +
                         '</div>'

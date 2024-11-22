@@ -114,7 +114,7 @@
                                         <button class="edit-category border-none" type="button" id="edit_category"
                                             data-id="{{ $data->id }}" data-name="{{ $data->name }}" data-status="{{ $data->status }}" data-toggle="tooltip"
                                             data-placement="top" title="Edit Category">
-                                            <img src="{{ asset('vendor/larasnap-auth/images/edit.png') }}" alt="IMG">
+                                            <img src="{{  asset('vendor/laradocs/images/edit.png') }}" alt="IMG">
                                         </button>
                                         @endcanAccess
                                         @if($data->status == 1)
@@ -122,7 +122,7 @@
                                         <button class="delete-category border-none" type="button" id="delete_category"
                                             data-id="{{ $data->id }}" data-name="{{ $data->name }}" data-toggle="tooltip"
                                             data-placement="top" title="Delete Category">
-                                            <img src="{{ asset('vendor/larasnap-auth/images/delete.png') }}" alt="IMG">
+                                            <img src="{{  asset('vendor/laradocs/images/delete.png') }}" alt="IMG">
                                         </button>
                                         @endcanAccess
                                         @endif
