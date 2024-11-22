@@ -114,14 +114,14 @@ class DocumentManagementSeeder extends Seeder
             $menuItem11 = new MenuItem;
             $menuItem11->title = "Document";
             $menuItem11->icon = "fa-upload";
-            $menuItem11->order = 10;
+            $menuItem11->order = 11;
             $menuItem11->target = "_self";
             $menuItem11->route = "document.list";
 
             $menuItem12 = new MenuItem;
             $menuItem12->title = "Document List";
             $menuItem12->icon = "fa-file-text";
-            $menuItem12->order = 1;
+            $menuItem12->order = 12;
             $menuItem12->target = "_self";
             $menuItem12->route = "user.document";
 
