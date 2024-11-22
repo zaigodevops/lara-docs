@@ -1,6 +1,6 @@
 <?php
 
-namespace DMS\DocumentManagementSystem\Models;
+namespace ZaigoInfotech\LaraDocs\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

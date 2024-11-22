@@ -1,9 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Route;
-use DMS\DocumentManagementSystem\Http\Controllers\CategoryController;
-use DMS\DocumentManagementSystem\Http\Controllers\DocumentController;
-use DMs\DocumentManagementSystem\Http\Controllers\DashboardController;
-use DMS\DocumentManagementSystem\Http\Controllers\AdminController;
+use ZaigoInfotech\LaraDocs\Http\Controllers\CategoryController;
+use ZaigoInfotech\LaraDocs\Http\Controllers\DocumentController;
+use ZaigoInfotech\LaraDocs\Http\Controllers\DashboardController;
+use ZaigoInfotech\LaraDocs\Http\Controllers\AdminController;
 
 
 /**** ADMIN PROFILE ROUTES ****/

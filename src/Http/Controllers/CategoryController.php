@@ -1,11 +1,11 @@
 <?php
 
-namespace DMS\DocumentManagementSystem\Http\Controllers;
+namespace ZaigoInfotech\LaraDocs\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use DMS\DocumentManagementSystem\Models\Document;
-use Dms\DocumentManagementSystem\Models\DocumentCategory;
+use ZaigoInfotech\LaraDocs\Document;
+use ZaigoInfotech\LaraDocs\DocumentCategory;
 
 class CategoryController extends Controller
 {
