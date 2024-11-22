@@ -1,5 +1,5 @@
 <?php
-namespace DMS\DocumentManagementSystem\Database\Seeders;
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use LaraSnap\LaravelAdmin\Models\User;
