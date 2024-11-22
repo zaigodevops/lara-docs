@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'DMS\\DocumentManagementSystem\\' => array($baseDir . '/src'),
+    'ZaigoInfotech\\LaraDocs\\' => array($baseDir . '/src'),
 );

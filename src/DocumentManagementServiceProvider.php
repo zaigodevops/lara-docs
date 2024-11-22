@@ -1,6 +1,6 @@
 <?php
 
-namespace DMS\DocumentManagementSystem;
+namespace ZaigoInfotech\LaraDocs;
 
 use Illuminate\Support\ServiceProvider;
 

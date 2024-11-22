@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInitb0a101d7426782c512e705ed9448c9dc
 {
     public static $prefixLengthsPsr4 = array (
-        'D' => 
+        'Z' => 
         array (
-            'DMS\\DocumentManagementSystem\\' => 29,
+            'ZaigoInfotech\\LaraDocs\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'DMS\\DocumentManagementSystem\\' => 
+        'ZaigoInfotech\\LaraDocs\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
