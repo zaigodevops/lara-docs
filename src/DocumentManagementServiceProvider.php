@@ -22,6 +22,11 @@ class DocumentManagementServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/Database/Seeders/DocumentManagementSeeder.php' => database_path('seeders/DocumentManagementSeeder.php'),
         ], 'document-management-seeder');
+
+         // Make css,image publishable
+        $this->publishes([
+            __DIR__ . '/../Public' => public_path('vendor/laradocs'),
+        ], 'laradocs-assets');
     }
 
     public function register()

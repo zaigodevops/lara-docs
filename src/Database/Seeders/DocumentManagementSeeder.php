@@ -103,29 +103,37 @@ class DocumentManagementSeeder extends Seeder
             $menu->name = 'admin';
             $menu->label = 'Admin';
             $menu->save();
-
-            $menuItem10 = new MenuItem;
-            $menuItem10->title = "Document Category";
-            $menuItem10->icon = "fa-list";
-            $menuItem10->order = 10;
-            $menuItem10->target = "_self";
-            $menuItem10->route = "category.index";
-
-            $menuItem11 = new MenuItem;
-            $menuItem11->title = "Document";
-            $menuItem11->icon = "fa-upload";
-            $menuItem11->order = 11;
-            $menuItem11->target = "_self";
-            $menuItem11->route = "document.list";
-
-            $menuItem12 = new MenuItem;
-            $menuItem12->title = "Document List";
-            $menuItem12->icon = "fa-file-text";
-            $menuItem12->order = 12;
-            $menuItem12->target = "_self";
-            $menuItem12->route = "user.document";
-
-            $menu = $menu->items()->saveMany([$menuItem10,$menuItem11,$menuItem12]);
+        }
+        
+        // Menu Items
+        $menuItems = [
+            [
+                'title' => "Document Category",
+                'icon' => "fa-list",
+                'order' => 10,
+                'target' => "_self",
+                'route' => "category.index",
+            ],
+            [
+                'title' => "Document",
+                'icon' => "fa-upload",
+                'order' => 11,
+                'target' => "_self",
+                'route' => "document.list",
+            ],
+            [
+                'title' => "Document List",
+                'icon' => "fa-file-text",
+                'order' => 12,
+                'target' => "_self",
+                'route' => "user.document",
+            ],
+        ];
+        
+        // Save Menu Items
+        foreach ($menuItems as $menuItemData) {
+            $menuItem = new MenuItem($menuItemData);
+            $menu->items()->save($menuItem); // Assuming items() is the correct relationship
         }
     }
 }
