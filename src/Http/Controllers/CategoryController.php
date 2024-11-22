@@ -4,8 +4,8 @@ namespace ZaigoInfotech\LaraDocs\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use ZaigoInfotech\LaraDocs\Document;
-use ZaigoInfotech\LaraDocs\DocumentCategory;
+use ZaigoInfotech\LaraDocs\Models\Document;
+use ZaigoInfotech\LaraDocs\Models\DocumentCategory;
 
 class CategoryController extends Controller
 {
