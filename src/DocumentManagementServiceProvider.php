@@ -25,7 +25,7 @@ class DocumentManagementServiceProvider extends ServiceProvider
 
          // Make css,image publishable
         $this->publishes([
-            __DIR__ . '/../Public' => public_path('vendor/laradocs'),
+            __DIR__ . '/Public' => public_path('vendor/laradocs'),
         ], 'laradocs-assets');
     }
 
