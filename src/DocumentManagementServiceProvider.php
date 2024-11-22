@@ -19,7 +19,7 @@ class DocumentManagementServiceProvider extends ServiceProvider
         ], 'views');
 
         $this->publishes([
-            __DIR__ . '/../database/seeders/DocumentManagementSeeder.php' => database_path('seeders/DocumentManagementSeeder.php'),
+            __DIR__ . '/database/seeders/DocumentManagementSeeder.php' => database_path('seeders/DocumentManagementSeeder.php'),
         ], 'document-management-seeder');
     }
 
