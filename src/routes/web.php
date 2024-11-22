@@ -5,33 +5,13 @@ use DMS\DocumentManagementSystem\Http\Controllers\DocumentController;
 use DMs\DocumentManagementSystem\Http\Controllers\DashboardController;
 use DMS\DocumentManagementSystem\Http\Controllers\AdminController;
 
-Route::group(['middleware' => ['web', 'auth', 'check-userstatus'], 'roles' => ''], function () {
-
-    Route::group(['middleware' => ['check-roles']], function () {
-        Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-            Route::group(['prefix' => 'users', 'exculde' => ['users.filter', 'users.store', 'users.update', 'user.bulkdestroy', 'users.assignrole_store']], function () {
-                Route::get('/', 'App\Http\Controllers\Admin\UserController@index')->name('users.index');
-                // Route::post('/', 'App\Http\Controllers\Admin\UserController@index')->name('users.filter');
-                Route::get('create', 'App\Http\Controllers\Admin\UserController@create')->name('users.create');
-                Route::post('create', 'App\Http\Controllers\Admin\UserController@store')->name('users.store');
-                Route::get('{user}/edit', 'App\Http\Controllers\Admin\UserController@edit')->name('users.edit');
-                // Route::put('{user}', 'App\Http\Controllers\Admin\UserController@update')->name('users.update');
-                Route::get('{user}', 'App\Http\Controllers\Admin\UserController@show')->name('users.show');
-                Route::delete('{user}', 'App\Http\Controllers\Admin\UserController@destroy')->name('users.destroy');
-                Route::delete('/', 'App\Http\Controllers\Admin\UserController@bulkdestroy')->name('user.bulkdestroy');
-                Route::get('{user}/roles', 'App\Http\Controllers\Admin\UserController@assignRoleCreate')->name('users.assignrole_create');
-                Route::post('{user}/roles', 'App\Http\Controllers\Admin\UserController@assignRoleStore')->name('users.assignrole_store');
-            });
-        });
-    });
-});
 
 /**** ADMIN PROFILE ROUTES ****/
 Route::group(['middleware' => 'auth'], function () {
 Route::get('admin/', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
 });
 
-Route::group(['prefix' => 'admin', 'middleware' => ['check-roles']], function () {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('/dashboard', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
     Route::get('profile/edit', [AdminController::class, 'edit'])->name('admin.profile.edit');
     Route::put('{user}/update', [AdminController::class, 'profile_update'])->name('admin.profile.update');
