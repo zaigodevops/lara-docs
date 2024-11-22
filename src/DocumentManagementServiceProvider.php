@@ -11,7 +11,7 @@ class DocumentManagementServiceProvider extends ServiceProvider
         // Load routes
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'document-management');
+        $this->loadViewsFrom(__DIR__ . '/Resources/Views', 'lara-docs');
 
         // Make views publishable
         $this->publishes([

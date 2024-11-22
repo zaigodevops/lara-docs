@@ -32,7 +32,7 @@ class CategoryController extends Controller
 
         $categories = $categoryQuery->orderBy('created_at', 'desc')->paginate(10);
 
-        return view('admin.category.list')->with(['category' => $categories]);
+        return view('lara-docs::category.list')->with(['category' => $categories]);
     }
 
     public function create(Request $request)
