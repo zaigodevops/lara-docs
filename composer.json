@@ -17,7 +17,7 @@
     "extra": {
     "laravel": {
       "providers": [
-        "DMS\\DocumentManagementSystem\\DocumentManagementServiceProvider"
+        "ZaigoInfotech\\LaraDocs\\DocumentManagementServiceProvider"
       ]
     }
   }

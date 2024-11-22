@@ -17,6 +17,10 @@ class DocumentManagementServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/resources/views' => resource_path('views/DMS/document-management'),
         ], 'views');
+
+        $this->publishes([
+            __DIR__ . '/../database/seeders/DocumentManagementSeeder.php' => database_path('seeders/DocumentManagementSeeder.php'),
+        ], 'document-management-seeder');
     }
 
     public function register()
