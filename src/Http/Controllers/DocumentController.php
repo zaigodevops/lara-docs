@@ -12,7 +12,7 @@ class DocumentController extends Controller
     public function index(Request $request)
     {
         $category = DocumentCategory::where('status', '1')->get();
-        return view('admin.document.index')->with(['category' => $category]);
+        return view('lara-docs::document.index')->with(['category' => $category]);
     }
 
     public function list(Request $request)
@@ -64,7 +64,7 @@ class DocumentController extends Controller
             $document->files = pathinfo($document->files, PATHINFO_FILENAME);
         }
 
-        return view('admin.document.list', [
+        return view('lara-docs::document.list', [
             'document' => $documents,
             'categories' => $categories,
         ]);
