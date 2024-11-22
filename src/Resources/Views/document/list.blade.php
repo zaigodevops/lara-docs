@@ -2,7 +2,7 @@
     use Illuminate\Support\Str;
 @endphp
 @extends('larasnap::layouts.app', ['class' => ''])
-
+<link rel="stylesheet" href="{{ asset('vendor/laradocs/css/styles.css') }}">
 @section('content')
 
 <!-- Page Heading  Start-->
