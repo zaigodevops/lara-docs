@@ -7,14 +7,14 @@ use DMS\DocumentManagementSystem\Http\Controllers\AdminController;
 
 
 /**** ADMIN PROFILE ROUTES ****/
-Route::group(['middleware' => 'auth'], function () {
-// Route::get('admin/', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
-});
+// Route::group(['middleware' => 'auth'], function () {
+// // Route::get('admin/', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
+// });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin' ,'middleware' => 'auth'], function () {
     // Route::get('/dashboard', 'App\Http\Controllers\Admin\UserController@dashboard')->name('dashboard');
-    Route::get('profile/edit', [AdminController::class, 'edit'])->name('admin.profile.edit');
-    Route::put('{user}/update', [AdminController::class, 'profile_update'])->name('admin.profile.update');
+    // Route::get('profile/edit', [AdminController::class, 'edit'])->name('admin.profile.edit');
+    // Route::put('{user}/update', [AdminController::class, 'profile_update'])->name('admin.profile.update');
     
     Route::get('category',[CategoryController::class ,'index'])->name('category.index');
     Route::post('category/create',[CategoryController::class ,'create'])->name('category.create');
@@ -31,16 +31,16 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 /**** USER ROUTES ****/
-Route::group(['middleware' => 'auth'], function () {
-Route::get('user/', [DashBoardController::class, 'index'])->name('user.dashboard');
-});
+// Route::group(['middleware' => 'auth'], function () {
+// Route::get('user/', [DashBoardController::class, 'index'])->name('user.dashboard');
+// });
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function () {
-    Route::get('dashboard', [DashBoardController::class, 'index'])->name('user.dashboard');
-    Route::get('profile/edit', [DashBoardController::class, 'edit'])->name('user.profile.edit');
-    Route::put('update/{user}', [DashBoardController::class, 'update'])->name('user.profile.update');
-    Route::get('/signin',[DashBoardController::class,'signin'])->name('user.signin');
-    Route::post('/password/save', [DashBoardController::class, 'savepassword'])->name('password.save');
+    // Route::get('dashboard', [DashBoardController::class, 'index'])->name('user.dashboard');
+    // Route::get('profile/edit', [DashBoardController::class, 'edit'])->name('user.profile.edit');
+    // Route::put('update/{user}', [DashBoardController::class, 'update'])->name('user.profile.update');
+    // Route::get('/signin',[DashBoardController::class,'signin'])->name('user.signin');
+    // Route::post('/password/save', [DashBoardController::class, 'savepassword'])->name('password.save');
     Route::get('document', [DashBoardController::class, 'document'])->name('user.document');
     Route::get('document/view', [DashBoardController::class, 'viewdocument'])->name('user.view.document');
     Route::get('document/download', [DashBoardController::class, 'downloaddocument'])->name('user.download.document');
