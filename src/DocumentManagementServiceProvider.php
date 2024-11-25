@@ -24,9 +24,10 @@ class DocumentManagementServiceProvider extends ServiceProvider
         ], 'document-management-seeder');
 
          // Make css,image publishable
-        $this->publishes([
-            __DIR__ . '/Public' => public_path('vendor/laradocs'),
+         $this->publishes([
+            __DIR__ . '/public/vendor/laradocs' => public_path('vendor/laradocs'),
         ], 'laradocs-assets');
+        
     }
 
     public function register()
