@@ -20,42 +20,8 @@ class DocumentManagementSeeder extends Seeder
      */
     public function run()
     {
-        //User Seed 
-        $user = User::where('email', 'admin@admin.com')->first();
-        if (!$user) {
-            $user = new User;
-            $user->email = 'admin@admin.com';
-            $user->password = bcrypt('password');
-            $user->status = 1;
-            $user->created_by = 0;
-            $user->save();
-
-            $userProfile = new UserProfile;
-            $userProfile->first_name = 'Super';
-            $userProfile->last_name = 'Admin';
-            $userProfile->mobile_no = 9876543210;
-            $userProfile->address = 'Test Address';
-            $userProfile->state = 'Test State';
-            $userProfile->city = 'Test State';
-            $userProfile->pincode = 98765;
-            $user->userProfile()->save($userProfile);
-        }
-
         //Role Seed
         $role = Role::where('name', 'super-admin')->first();
-        if (!$role) {
-            $role = new Role;
-            $role->name = 'super-admin';
-            $role->label = 'Super Admin';
-            $role->save();
-        }
-
-        //User Role Mapping Seed
-        $user->roles()->detach();
-        $user->assignRole($role->id);
-
-        //Module
-        Module::whereIn('label', ['Document Category', 'Document Upload'])->delete();
 
         $module11 = new Module;
         $module11->label = 'Document Category';
@@ -65,13 +31,7 @@ class DocumentManagementSeeder extends Seeder
         $module12->label = 'Document Upload';
         $module12->save();
 
-        //Screen Seed & Role Screen Mapping Seed
-        Screen::whereIn('name', ['category.index', 'category.create', 'category.update', 'category.delete', 'document.list', 'document.index', 'document.upload', 'view.document', 'download.document', 'delete.document'])->delete();
-
-        RoleScreen::where('role_id', $role->id)->delete();
-
-        $screens = [
-           
+        $screens = [           
             ['name' => 'category.index', 'label' => 'Category List', 'module_id' => $module11->id],
             ['name' => 'category.create', 'label' => 'Category Creation', 'module_id' => $module11->id],
             ['name' => 'category.update', 'label' => 'Category Edit', 'module_id' => $module11->id],
@@ -91,12 +51,6 @@ class DocumentManagementSeeder extends Seeder
 
         //Menu Seed 
         $menu = Menu::where('name', 'admin')->first();
-        if (!$menu) {
-            $menu = new Menu;
-            $menu->name = 'admin';
-            $menu->label = 'Admin';
-            $menu->save();
-        }
         
         // Menu Items
         $menuItems = [
