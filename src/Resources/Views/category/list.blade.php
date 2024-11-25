@@ -99,8 +99,6 @@
                                     <span title="{{ $data->name ? basename($data->name) : '-' }}">
                                             {{ Str::limit(basename($data->name), 30) }}
                                         </span></td>
-                                    <!-- <td>{{ $data->name}}</td> -->
-                                    <!-- <td>{{ \Carbon\Carbon::parse($data->created_at)->format('m/d/Y') }}</td> -->
                                     <td>{{ \Carbon\Carbon::parse($data->created_at)->format('M-j-Y') }}</td>
                                     <td>
                                         @if($data->status == 1)
@@ -206,7 +204,6 @@
         <div class="modal-content">
             <div class="modal-header justify-content-center">
                 <h4 class="modal-title text-dark" id="deleteCategoryModalLabel">Delete Category</h4>
-                <!-- <button type="button" class="btn" data-dismiss="modal">X</button> -->
             </div>
             <div class="modal-body">
                 <form id="deleteCategoryForm">
@@ -230,7 +227,7 @@
                         <div class="modal-body">
                             <div class="text-center">
                                 <p><img style="width: 115px;"
-                                        src="{{ asset('vendor/larasnap-auth/images/success-icon.png') }}" alt="IMG"></p>
+                                        src="{{ asset('vendor/laradocs/images/success-icon.png') }}" alt="IMG"></p>
                                 <h1>New Category Added</h1>
                                 <p>You can now manage or view the category in the list.</p>
                             </div>
@@ -302,8 +299,6 @@
                 success: function(response) {
                     $('#addCategoryModal').modal('hide');
                     $('#successpopup').modal('show');
-                    // toastr.success('d-none').text('Category created successfully');
-                    // location.reload();
                 },
                 error: function(xhr) {
             if (xhr.status === 422) {

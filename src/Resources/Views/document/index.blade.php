@@ -355,7 +355,6 @@
                     contentType: false,
                     success: function (response) {
                         $('#createLoader').addClass('d-none');
-                        // toastr.success("Files uploaded successfully!");
                         dropzoneInstance.removeAllFiles(true);
                         $('#file-preview-container').empty();
                         $('#submit-upload').prop('disabled', true);

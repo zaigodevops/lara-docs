@@ -114,10 +114,8 @@
                                             {{ Str::limit(basename($data->category_name), 15) }}
                                         </span>
                                         </td>
-                                    <!-- <td>{{ $data->category_name ?? '-' }}</td> -->
                                     <td>{{ $data->created_at ? \Carbon\Carbon::parse($data->created_at)->format('M-j-Y') : '-' }}
                                     </td>
-                                    <!-- <td>{{ $data->created_at ? \Carbon\Carbon::parse($data->created_at)->format('m/d/Y') : '-' }} -->
                                     </td>
                                     <td>
                                         @if($data->category->status == 1)
@@ -144,7 +142,7 @@
                                         <button class="border-none delete-button" type="button"
                                             data-document-id="{{ $data->id }}" data-category-id="{{ $data->category_id }}"
                                             data-toggle="tooltip" data-placement="top" title="Delete File">
-                                            <img src="{{  asset('vendor/laradocs/images/elete.png') }}" alt="IMG">
+                                            <img src="{{  asset('vendor/laradocs/images/delete.png') }}" alt="IMG">
                                         </button>
 
                                     </td>
@@ -153,7 +151,7 @@
                             @empty
                                 <tr>
                                     <td colspan="7" class="nodata">
-                                        <p><img src="{{  asset('vendor/laradocs/images/pload.png') }}" alt="IMG"></p>
+                                        <p><img src="{{  asset('vendor/laradocs/images/upload.png') }}" alt="IMG"></p>
                                         No data available
                                     </td>
                                 </tr>
@@ -200,9 +198,7 @@
         </div>
     </div>
 </div>
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>

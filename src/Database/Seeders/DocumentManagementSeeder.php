@@ -65,12 +65,8 @@ class DocumentManagementSeeder extends Seeder
         $module12->label = 'Document Upload';
         $module12->save();
 
-        $module13 = new Module;
-        $module13->label = 'User Document List';
-        $module13->save();
-
         //Screen Seed & Role Screen Mapping Seed
-        Screen::whereIn('name', ['category.index', 'category.create', 'category.update', 'category.delete', 'document.list', 'document.index', 'document.upload', 'view.document', 'download.document', 'delete.document', 'user.document', 'user.view.document', 'user.download.document'])->delete();
+        Screen::whereIn('name', ['category.index', 'category.create', 'category.update', 'category.delete', 'document.list', 'document.index', 'document.upload', 'view.document', 'download.document', 'delete.document'])->delete();
 
         RoleScreen::where('role_id', $role->id)->delete();
 
@@ -86,9 +82,6 @@ class DocumentManagementSeeder extends Seeder
             ['name' => 'view.document', 'label' => 'Document View', 'module_id' => $module12->id],
             ['name' => 'download.document', 'label' => 'Document Download', 'module_id' => $module12->id],
             ['name' => 'delete.document', 'label' => 'Document Delete', 'module_id' => $module12->id],
-            ['name' => 'user.document', 'label' => 'User Document List', 'module_id' => $module13->id],
-            ['name' => 'user.view.document', 'label' => 'User Document View', 'module_id' => $module13->id],
-            ['name' => 'user.download.document', 'label' => 'User Document Download', 'module_id' => $module13->id],
         ];
 
         foreach ($screens as $screen) {
@@ -120,13 +113,6 @@ class DocumentManagementSeeder extends Seeder
                 'order' => 11,
                 'target' => "_self",
                 'route' => "document.list",
-            ],
-            [
-                'title' => "Document List",
-                'icon' => "fa-file-text",
-                'order' => 12,
-                'target' => "_self",
-                'route' => "user.document",
             ],
         ];
         
